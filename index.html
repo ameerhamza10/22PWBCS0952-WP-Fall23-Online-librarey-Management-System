@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>OLMS</title>
+    <link rel="stylesheet" href="
+    https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+
+        <nav class="navbar navbar-expand-lg navbar-custom">
+        <div class="container-fluid">
+          <img src="images/logo2.jpeg" alt="logo">
+          <button class="navbar-toggler" type="button"  data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarText">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="/">Home</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Book Categories
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">history</a></li>
+                  <li><a class="dropdown-item" href="#">programming</a></li>
+                  <li><a class="dropdown-item" href="#">romantic</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="path/cart.html">cart</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="path/payment.html">payment</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="path/contact.html">contact us</a>
+              </li>
+            </ul>
+            <span class="navbar-text " style="margin-right: 2em;">
+                <i class="fa-solid fa-cart-shopping "style="font-size:2em;"></i>
+                <span id="cart" style="margin-left: 1em;">0</span>
+            </span>
+          </div>
+        </div>
+      </nav>
+
+     <!-- home section of OLMS  -->
+
+
+     <div id="carosel" class="carousel slide">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#carosel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#carosel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#carosel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+          
+          <div class="carousel-item active">
+            <img src="images/libraray.webp" class="d-block w-100" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+                <h5>Online library Management Systems</h5>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="images/library5.webp" class="d-block w-100" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+                <h5>Online library Management Systems</h5>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="images/library4.webp" class="d-block w-100" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+                <h5>Online library Management Systems</h5>
+            </div>
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carosel" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carosel" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+
+
+
+     <div id="hero">
+        <div id="left">
+            <img src="images/libraray.webp" alt="images">
+        </div>
+        <div id="right">
+            <h3>Back to school</h3>
+            <h1>
+                Special <span>50% OFF</span>
+            </h1>
+            <h2>for our student community</h2>
+            <button class="btn btn-primary">Get the deal</button>
+        </div>
+        </div>
+     
+        <!-- here i use api -->
+
+<h1 class="text-center">Online Books Selling</h1>
+<div class="container mt-4">
+    <div class="row" id="bookContainer" >
+    </div>
+</div>
+
+<footer class="footer ">
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-section about  text-center">
+                <h2>About Us</h2>
+                <p>You can find us on social media as well</p>
+                <div class="contact">
+                    <span><i class="fas fa-phone"></i> +923424009710</span><br><br>
+                    <span><i class="fas fa-envelope"></i> ameerhamza9126@gmail.com</span>
+                </div>
+            </div>
+            <div class="footer-section links  text-center">
+                <h2>Quick Links</h2>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Books</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section social  text-center">
+                <h2>Follow Us</h2>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a><br>
+                    <a href="#"><i class="fab fa-twitter"></i></a><br>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2023 OLMS. All rights reserved.</p>
+    </div>
+</footer>
+
+    <script src="script.js"></script>
+
+  </body>
+
+</html>

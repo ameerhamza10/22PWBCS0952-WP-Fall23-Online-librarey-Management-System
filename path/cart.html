@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart</title>
+    
+    <link rel="stylesheet" href="
+    https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-custom">
+        <div class="container-fluid">
+          <img src="../images/logo2.jpeg" alt="logo">
+          <button class="navbar-toggler" type="button"  data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarText">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="../index.html">Home</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Book Categories
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">history</a></li>
+                  <li><a class="dropdown-item" href="#">programming</a></li>
+                  <li><a class="dropdown-item" href="#">romantic</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="cart.html">cart</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="payment.html">payment</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="contact.html">contact us</a>
+              </li>
+            </ul>
+            <span class="navbar-text " style="margin-right: 2em;">
+              <i class="fa-solid fa-cart-shopping "style="font-size:2em;"></i>
+              <span id="cart" style="margin-left: 1em;"></span>
+          </span>
+
+          </div>
+        </div>
+      </nav>
+      
+
+      <div class="container mt-4">
+        <h2>Shopping Cart</h2>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Price</th>
+                    <th>Quantity</th>
+                    <th>Total</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody id="cartBody">
+            </tbody>
+        </table>
+
+        <p>Total Amount: <span id="totalAmount">$0.00</span></p>
+
+        <a href="../index.html" class="btn btn-primary mr-2 mb-5 mt-5">Continue Shopping</a>
+        <button class="btn btn-success mb-5 mt-5" onclick="proceedToPayment()">Proceed to Payment</button>
+    </div>
+
+
+
+
+      <footer class="footer ">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section about  text-center">
+                    <h2>About Us</h2>
+                    <p>You can find us on social media as well</p>
+                    <div class="contact">
+                        <span><i class="fas fa-phone"></i> +923424009710</span><br><br>
+                        <span><i class="fas fa-envelope"></i> ameerhamza9126@gmail.com</span>
+                    </div>
+                </div>
+                <div class="footer-section links  text-center">
+                    <h2>Quick Links</h2>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Books</a></li>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section social  text-center">
+                    <h2>Follow Us</h2>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a><br>
+                        <a href="#"><i class="fab fa-twitter"></i></a><br>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2023 OLMS. All rights reserved.</p>
+        </div>
+    </footer>
+
+
+    <script>
+ document.addEventListener("DOMContentLoaded", function () {
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+            const cartBody = document.getElementById('cartBody');
+            let totalAmount = 0;
+
+            function displayCart() {
+                cartBody.innerHTML = '';
+                totalAmount = 0;
+
+                cart.forEach(item => {
+                    const row = document.createElement('tr');
+                    const total = item.price * item.quantity;
+
+                    row.innerHTML = `
+                        <td>${item.title}</td>
+                        <td>$${item.price.toFixed(2)}</td>
+                        <td>
+                            <input type="number" class="form-control quantity-input" value="${item.quantity}" onchange="updateQuantity(${item.id}, this.value)">
+                        </td>
+                        <td>$${total.toFixed(2)}</td>
+                        <td><button class="btn btn-danger" onclick="removeFromCart(${item.id})">Remove</button></td>
+                    `;
+                    cartBody.appendChild(row);
+                    totalAmount += total;
+                });
+
+                const totalAmountElement = document.getElementById('totalAmount');
+                totalAmountElement.textContent = `$${totalAmount.toFixed(2)}`;
+            }
+
+            displayCart();
+
+            window.updateQuantity = function (id, quantity) {
+                const index = cart.findIndex(item => item.id === id);
+                if (index !== -1) {
+                    cart[index].quantity = parseInt(quantity);
+                    localStorage.setItem('cart', JSON.stringify(cart));
+                    displayCart();
+                }
+            };
+
+            window.removeFromCart = function (id) {
+                const index = cart.findIndex(item => item.id === id);
+                if (index !== -1) {
+                    cart.splice(index, 1);
+                    localStorage.setItem('cart', JSON.stringify(cart));
+                    displayCart();
+                }
+            };
+
+            window.proceedToPayment = function () {
+                window.location.href = 'payment.html';
+            };
+        });
+</script>
+
+</body>
+
+</html>

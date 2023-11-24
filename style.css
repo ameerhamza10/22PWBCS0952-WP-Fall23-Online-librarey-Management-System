@@ -1,0 +1,148 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.navbar-custom {
+  width: 100%;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #26626B;
+  color: #FFF7D6;
+}
+.navbar-custom .container-fluid img {
+  width: 4em;
+  border-radius: 50%;
+}
+.navbar-custom #navbarText ul li {
+  margin: 0 0.7em;
+}
+.navbar-custom #navbarText ul li a {
+  color: #FFF7D6;
+  background-color: #26626B;
+  text-transform: capitalize;
+  font-size: 1.1em;
+  border-radius: 3em;
+  margin: 0.4em;
+  transition: 0.3s;
+}
+.navbar-custom #navbarText ul li a:hover {
+  background-color: #02bad6;
+}
+
+#hero {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin: 9em 3em;
+}
+#hero #left img {
+  max-width: 100%;
+  min-width: 100%;
+  border-radius: 40%;
+  max-height: 100%;
+  min-height: 50%;
+}
+#hero #right {
+  padding: 2em;
+}
+#hero #right h3 {
+  color: #02bad6;
+  margin-bottom: 0.7em;
+}
+#hero #right h1 {
+  margin-bottom: 0.7em;
+}
+#hero #right h1 span {
+  color: #02bad6;
+}
+#hero #right h2 {
+  margin-bottom: 0.7em;
+  text-transform: capitalize;
+}
+#hero #right button {
+  border-radius: 2em;
+  padding: 0.6em 2em;
+  font-size: 1.1em;
+}
+
+#carosel {
+  width: 100%;
+  text-align: center;
+}
+#carosel .carousel-inner .carousel-item {
+  background-color: #26626B;
+}
+#carosel .carousel-inner .carousel-item img {
+  width: 100%;
+  height: 90vh;
+  opacity: 0.7;
+}
+#carosel .carousel-inner .carousel-item .carousel-caption h5 {
+  font-size: 3em;
+  opacity: 1;
+}
+
+.footer {
+  background-color: #333;
+  color: #fff;
+  padding: 50px 0;
+}
+.footer .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+.footer .footer-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 100%;
+}
+.footer .footer-section {
+  flex: 1 1 250px;
+  margin-bottom: 20px;
+}
+.footer .footer-section h2 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+}
+.footer .footer-section p {
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+.footer .footer-section ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.footer .footer-section ul li {
+  margin-bottom: 8px;
+}
+.footer .footer-section ul li a {
+  color: #fff;
+  text-decoration: none;
+}
+.footer .footer-section ul li a:hover {
+  text-decoration: underline;
+}
+.footer .footer-section .social-links a {
+  color: #fff;
+  font-size: 1.5rem;
+  margin-right: 10px;
+  transition: color 0.3s ease;
+}
+.footer .footer-section .social-links a:hover {
+  color: #ffcc00; /* Change color on hover */
+}
+.footer .footer-bottom {
+  padding-top: 2.5em;
+  border-top: 0.1em solid #666;
+}
+.footer .footer-bottom p {
+  font-size: 0.8rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}/*# sourceMappingURL=style.css.map */
